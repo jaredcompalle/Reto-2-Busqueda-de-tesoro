@@ -41,8 +41,10 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            picUbicacion = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvRuta).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numPeligro).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picUbicacion).BeginInit();
             SuspendLayout();
             // 
             // dgvRuta
@@ -50,40 +52,41 @@
             dgvRuta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRuta.Location = new Point(25, 12);
             dgvRuta.Name = "dgvRuta";
-            dgvRuta.Size = new Size(482, 105);
+            dgvRuta.Size = new Size(412, 105);
             dgvRuta.TabIndex = 0;
+            dgvRuta.CellClick += dgvRuta_CellClick;
             // 
             // txtId
             // 
-            txtId.Location = new Point(513, 7);
+            txtId.Location = new Point(563, 7);
             txtId.Name = "txtId";
             txtId.Size = new Size(100, 23);
             txtId.TabIndex = 1;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(513, 36);
+            txtNombre.Location = new Point(563, 36);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(100, 23);
             txtNombre.TabIndex = 2;
             // 
             // txtPista
             // 
-            txtPista.Location = new Point(513, 65);
+            txtPista.Location = new Point(563, 65);
             txtPista.Name = "txtPista";
             txtPista.Size = new Size(100, 23);
             txtPista.TabIndex = 3;
             // 
             // numPeligro
             // 
-            numPeligro.Location = new Point(513, 94);
+            numPeligro.Location = new Point(563, 94);
             numPeligro.Name = "numPeligro";
             numPeligro.Size = new Size(100, 23);
             numPeligro.TabIndex = 4;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(144, 123);
+            btnEliminar.Location = new Point(112, 123);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 5;
@@ -93,7 +96,7 @@
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(225, 123);
+            btnModificar.Location = new Point(193, 123);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(75, 23);
             btnModificar.TabIndex = 6;
@@ -103,7 +106,7 @@
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(306, 123);
+            btnBuscar.Location = new Point(274, 123);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(75, 23);
             btnBuscar.TabIndex = 7;
@@ -113,7 +116,7 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(538, 134);
+            btnAgregar.Location = new Point(588, 134);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(75, 23);
             btnAgregar.TabIndex = 8;
@@ -124,7 +127,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(619, 10);
+            label1.Location = new Point(669, 10);
             label1.Name = "label1";
             label1.Size = new Size(17, 15);
             label1.TabIndex = 9;
@@ -133,7 +136,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(619, 39);
+            label2.Location = new Point(669, 39);
             label2.Name = "label2";
             label2.Size = new Size(60, 15);
             label2.TabIndex = 10;
@@ -142,26 +145,37 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(619, 68);
+            label3.Location = new Point(669, 68);
             label3.Name = "label3";
-            label3.Size = new Size(51, 15);
+            label3.Size = new Size(32, 15);
             label3.TabIndex = 11;
-            label3.Text = "Nombre";
+            label3.Text = "Pista";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(619, 96);
+            label4.Location = new Point(669, 96);
             label4.Name = "label4";
             label4.Size = new Size(44, 15);
             label4.TabIndex = 12;
             label4.Text = "Peligro";
             // 
+            // picUbicacion
+            // 
+            picUbicacion.Image = Properties.Resources.nosignal;
+            picUbicacion.Location = new Point(443, 12);
+            picUbicacion.Name = "picUbicacion";
+            picUbicacion.Size = new Size(114, 105);
+            picUbicacion.SizeMode = PictureBoxSizeMode.StretchImage;
+            picUbicacion.TabIndex = 13;
+            picUbicacion.TabStop = false;
+            // 
             // FrmRutaTesoro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 168);
+            Controls.Add(picUbicacion);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -179,6 +193,7 @@
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dgvRuta).EndInit();
             ((System.ComponentModel.ISupportInitialize)numPeligro).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picUbicacion).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -198,5 +213,6 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private PictureBox picUbicacion;
     }
 }

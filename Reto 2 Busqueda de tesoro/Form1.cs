@@ -142,5 +142,47 @@ namespace Reto_2_Busqueda_de_tesoro
                                 MessageBoxIcon.Error);
             }
         }
+        private void dgvRuta_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow filaSeleccionada = dgvRuta.Rows[e.RowIndex];
+
+                string nombre = filaSeleccionada.Cells["Nombre"].Value?.ToString().ToLower() ?? "";
+
+                if (nombre.Contains("playa"))
+                {
+                    picUbicacion.Image = Properties.Resources.playa;
+                }
+                else if (nombre.Contains("campo"))
+                {
+                    picUbicacion.Image = Properties.Resources.campo;
+                }
+                else if (nombre.Contains("casa"))
+                {
+                    picUbicacion.Image = Properties.Resources.casa;
+                }
+                else if (nombre.Contains("edificio"))
+                {
+                    picUbicacion.Image = Properties.Resources.edificio;
+                }
+                else if (nombre.Contains("cueva"))
+                {
+                    picUbicacion.Image = Properties.Resources.cueva;
+                }
+                else if (nombre.Contains("isla"))
+                {
+                    picUbicacion.Image = Properties.Resources.isla;
+                }
+                else if (nombre.Contains("templo"))
+                {
+                    picUbicacion.Image = Properties.Resources.templo;
+                }
+                else
+                {
+                    picUbicacion.Image = Properties.Resources.nosignal;
+                }
+            }
+        }
     }
 }
